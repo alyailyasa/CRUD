@@ -1,123 +1,17 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [
-        { text: "Doni", id :"1" },
-        { text: "Beno", id :"2" },
-      ],
-      text: "",
-      updateText: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateChange = this.updateChange.bind(this);
-  }
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-  render() {
-    return (
-      <div>
-        <h1>CRUD</h1>
-
-        <form onSubmit={this.handleSubmit}>
-          Name
-          <input
-            type="text"
-            value={this.state.text}
-            placeholder="Enter Name"
-            onChange={this.handleChange}
-          />
-          <button type="submit" className="btn save-btn">
-            Save
-          </button>
-        </form>
-
-        <h1> Render Data</h1>
-
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.items.map((item, index) => (
-              <tr key={item.id + index}>
-                <td className={item.showHide ? "hidden" : ""}> {item.text} </td>
-                <td className={item.showHide ? "" : "hidden"}>
-                  <input
-                    type="text"
-                    onChange={this.updateChange}
-                    defaultValue={item.text}
-                  />
-                </td>
-                <td>
-                  <button
-                    className={item.showHide ? "hidden" : "btn save-btn"}
-                    onClick={() => this.update(item)}
-                  >
-                    Update
-                  </button>
-                  <button
-                    className={item.showHide ? "btn save-btn" : "hidden"}
-                    onClick={() => this.save(item)}
-                  >
-                    Save
-                  </button>
-                  <button
-                    className="btn del-btn"
-                    onClick={() => this.delete(item)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
-  }
-  delete(e) {
-    this.state.items.splice(this.state.items.indexOf(e), 1);
-    this.setState({ items: this.state.items });
-  }
-  updateChange(e) {
-    this.setState({ updateText: e.target.value });
-  }
-  update(e) {
-    e.showHide = true;
-    this.setState(e);
-  }
-  save(e) {
-    const updateItem = {
-      text: this.state.updateText ? this.state.updateText : e.text,
-      id: Date.now()
-    };
-    this.state.items.splice(this.state.items.indexOf(e), 1, updateItem);
-    this.setState({ items: this.state.items });
-  }
-  handleChange(e) {
-    this.setState({ text: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    if (!this.state.text.length) {
-      return;
-    }
-    const newItem = {
-      text: this.state.text,
-      id: Date.now()
-    };
-    this.state.items.unshift(newItem);
-    this.setState({ items: this.state.items });
-  }
-}
-
-render(<App />, document.getElementById('root'));
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
