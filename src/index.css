@@ -10,8 +10,8 @@ html {
 }
 
 body {
-  color: #000000;
-  background: white;
+  color: #8758FF;
+  background: #181818;
 }
 
 h1,
@@ -20,7 +20,7 @@ h2 {
   font-weight: 600;
   font-family: sans-serif;
   line-height: 1.2;
-  color: #000000;
+  color: #F2F2F2;
 }
 
 h1 {
@@ -40,13 +40,6 @@ h2 {
 }
 
 /** Grid**/
-.flex-small,
-.flex-large {
-  flex-basis: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -55,60 +48,65 @@ h2 {
   margin-right: -1rem;
 }
 
-@media (min-width: 1000px) {
-  .flex-large {
-    flex: 1;
-    margin-bottom: 0;
-  }
+.flex-small{
+  flex-basis: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 30px;
+}
+.flex-large {
+  flex-basis: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /** Forms **/
 [type=text]{
   display: block;
-  border: 1px solid #dedede;
+  border: 1px solid #5CB8E4;
+  color: #ffffff;
   border-radius: 4px;
   padding: 0.75rem;
   outline: none;
   background: transparent;
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  width: 100%;
-  max-width: 100%;
+  width: 30%;
   line-height: 1;
 }
 
 /* Table */
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
+  border: 1px solid #5CB8E4;
+  width: 70%;
   max-width: 100%;
 }
 
 thead th {
-  border-bottom: 2px solid #dedede;
+  border-bottom: 2px solid #5CB8E4;
 }
 
 tfoot th {
-  border-top: 2px solid #dedede;
+  border-top: 1px solid #5CB8E4;
 }
 
 td {
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid #5CB8E4;
 }
 
 th,
 td {
-  text-align: left;
+  text-align: center;
   padding: 0.5rem;
 }
 
 /** Buttons **/
 .button, button, [type=submit], [type=reset], [type=button] {
   display: inline-block;
-  border: 1px solid #0366ee;
+  border: 1px solid #5CB8E4;
   border-radius: 4px;
-  background: #0366ee;
+  background: #5CB8E4;
   color: #ffffff;
   font-weight: 600;
   font-family: sans-serif;
@@ -122,7 +120,6 @@ td {
 
 .muted-button {
   background: transparent;
-  border: 1px solid #cdcdcd;
-  color: #000;
-  padding: 8px;
+  border: 1px solid #5CB8E4;
+  color: #8758FF;
 }
