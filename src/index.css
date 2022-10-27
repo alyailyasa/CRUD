@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 *,
@@ -16,25 +16,25 @@ body {
 
 h1,
 h2 {
-  margin: 1.5rem 0;
+  margin: 24px 0;
   font-weight: 600;
-  font-family: sans-serif;
-  line-height: 1.2;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
   color: #F2F2F2;
 }
 
 h1 {
   text-align: center;
-  font-size: 1.75rem;
+  font-size: 24px;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 22px;
 }
 
 .container {
   max-width: 1200px;
-  padding: 0 1rem;
+  padding: 0 16px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -44,33 +44,34 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: -1rem;
-  margin-right: -1rem;
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
 .flex-small{
   flex-basis: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 16px;
+  padding-right: 16px;
   padding-bottom: 30px;
 }
+
 .flex-large {
   flex-basis: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /** Forms **/
 [type=text]{
   display: block;
+  background: transparent;
   border: 1px solid #5CB8E4;
   color: #ffffff;
-  border-radius: 4px;
-  padding: 0.75rem;
   outline: none;
-  background: transparent;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 8px;
+  font-size: 16px;
   width: 50%;
   line-height: 1;
 }
@@ -98,24 +99,24 @@ td {
 th,
 td {
   text-align: center;
-  padding: 0.5rem;
+  padding: 8px;
 }
 
 /** Buttons **/
 .button, button, [type=submit], [type=reset], [type=button] {
+  cursor: pointer;
   display: inline-block;
   border: 1px solid #5CB8E4;
-  border-radius: 4px;
   background: #5CB8E4;
   color: #ffffff;
-  font-weight: 600;
-  font-family: sans-serif;
-  font-size: 16px;
-  padding: 0.25rem 0.75rem;
-  margin-right: 0.25rem;
+  border-radius: 4px;
   vertical-align: middle;
   text-align: center;
-  cursor: pointer;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 4px 12px;
+  margin-right: 8px;
 }
 
 .muted-button {
